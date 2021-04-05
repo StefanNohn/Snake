@@ -114,14 +114,13 @@ namespace Snake
             }
             if (!Ergebnis) GameOver();
             else
-            {
-                Laenge++;
+            {                
                 switch (Richtung)
                 {
-                    case 1: Position.Add(new Punkt(Position[0].Y - 1, Position[0].X)); if (Program.Bild[Position[0].Y - 1, Position[0].X] != 'X') Position.RemoveAt(Position.Count - 1); break;
-                    case 3: Position.Add(new Punkt(Position[0].Y + 1, Position[0].X)); if (Program.Bild[Position[0].Y + 1, Position[0].X] != 'X') Position.RemoveAt(Position.Count - 1); break;
-                    case 2: Position.Add(new Punkt(Position[0].Y, Position[0].X - 1)); if (Program.Bild[Position[0].Y, Position[0].X-1] != 'X') Position.RemoveAt(Position.Count - 1); break;
-                    case 4: Position.Add(new Punkt(Position[0].Y, Position[0].X + 1)); if (Program.Bild[Position[0].Y, Position[0].X+1] != 'X') Position.RemoveAt(Position.Count - 1); break; 
+                    case 1: Position.Add(new Punkt(Position[0].Y - 1, Position[0].X)); if (Program.Bild[Position[0].Y - 1, Position[0].X] == 'X') Position.RemoveAt(Position.Count - 1); break;
+                    case 3: Position.Add(new Punkt(Position[0].Y + 1, Position[0].X)); if (Program.Bild[Position[0].Y + 1, Position[0].X] == 'X') Position.RemoveAt(Position.Count - 1); break;
+                    case 2: Position.Add(new Punkt(Position[0].Y, Position[0].X - 1)); if (Program.Bild[Position[0].Y, Position[0].X-1] == 'X') Position.RemoveAt(Position.Count - 1); break;
+                    case 4: Position.Add(new Punkt(Position[0].Y, Position[0].X + 1)); if (Program.Bild[Position[0].Y, Position[0].X+1] == 'X') Position.RemoveAt(Position.Count - 1); break; 
                 }                
             }
         }
